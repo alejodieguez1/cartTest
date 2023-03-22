@@ -19737,6 +19737,7 @@ em {
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
+  border: none !important;
 }
 .rebuy-cart__flyout-title {
   font-family: "ChaletBook-Bold";
@@ -19746,6 +19747,9 @@ em {
 }
 .rebuy-cart__flyout-close {
   position: relative !important;
+}
+.rebuy-cart__flyout-body {
+  background: #f6f6f6 !important;
 }
 
 /* Rebuy Progress Bar */
@@ -19758,7 +19762,8 @@ em {
   color: #3c3c3b;
 }
 .rebuy-cart__progress-bar-container {
-  padding: 8px !important;
+  padding: 20px 15px 0 !important;
+  border: none !important;
 }
 .rebuy-cart__progress-bar-meter {
   background-color: #f6f6f6 !important;
@@ -19786,7 +19791,10 @@ em {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 10px 0;
+  padding: 0 15px;
+  background: #fff !important;
+  border-radius: 5px;
+  margin-top: 20px;
 }
 .gifts-checkbox {
   display: none !important;
@@ -19794,19 +19802,26 @@ em {
 .gifts-label {
   cursor: pointer;
 }
+#gifsToggle:checked ~ .gifts-content {
+  border-radius: 5px 5px 0 0;
+}
 #giftsToggle:checked ~ .rebuy-cart__progress-free-products-list {
   height: 100% !important;
   opacity: 1;
+  background: #fff !important;
+  border-radius: 0 0 5px 5px;
+  padding: 10px !important;
   transition: 0.3s;
 }
 
 /* Empty Cart Styles */
 
 .rebuy-cart__flyout-empty-cart {
-  margin: 55px 0px !important;
+  margin: 35px 0px !important;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: none !important;
 }
 
 h4.ql-align-center {
@@ -19821,7 +19836,7 @@ h4.ql-align-center {
 }
 
 .rebuy-cart__flyout-empty-cart a {
-  background: #fff !important;
+  background: #f6f6f6 !important;
   color: #3c3c3b !important;
   border: 1px solid #3c3c3b !important;
   border-radius: 5px;
@@ -19833,6 +19848,7 @@ h4.ql-align-center {
   padding: 8px 20px;
   box-sizing: border-box;
   transition: 0.3s;
+  text-decoration: none;
 }
 
 .ql-align-center {
@@ -19849,6 +19865,8 @@ h4.ql-align-center {
 
 .rebuy-cart__flyout-empty-cart-footer {
   padding: 0 !important;
+  border: none !important;
+  border-style: none!important;
 }
 
 /* Carousel Widget Styles */
@@ -19867,6 +19885,9 @@ h4.ql-align-center {
 .rebuy-product-block {
   display: flex;
   flex-direction: row !important;
+  background: #fff !important;
+  border-radius: 5px;
+  padding: 10px !important;
 }
 .rebuy-product-options {
   display: none;
@@ -19892,30 +19913,28 @@ h4.ql-align-center {
   height: 120px !important;
 }
 .rebuy-product-actions button.rebuy-button {
-  background: linear-gradient(
-    71deg,
-    rgba(255, 130, 58, 1) 0%,
-    rgba(255, 90, 97, 1) 37%,
-    rgba(255, 130, 58, 1) 100%
-  );
-  color: white;
-  white-space: nowrap;
+  background: #ffffff !important;
+  color: #3c3c3b !important;
+  border: 1px solid #3c3c3b !important;
   border-radius: 5px;
   font-size: 14px;
   font-family: "Chalet-LondonNineteenSixty";
   cursor: pointer;
-  padding: 0;
   height: 41px;
-  display: inline-flex;
-  align-items: center;
   letter-spacing: -0.03em;
-  padding: 0 20px;
+  padding: 8px 20px;
   box-sizing: border-box;
   transition: 0.3s;
-  border: none;
+  text-decoration: none;
+}
+.rebuy-product-grid {
+  margin-top: 10px !important;
 }
 .rebuy-cart__flyout-recommendations {
   padding: 0 20px !important;
+  border: none !important;
+  background: #f6f6f6 !important;
+  margin-bottom: 10px !important;
 }
 .rebuy-cart__progress-bar-container.below {
   padding: 0 !important;
@@ -19942,6 +19961,9 @@ h4.ql-align-center {
   border: none !important;
 }
 /* Products on cart styles */
+.rebuy-cart__flyout-items {
+  border: none !important;
+}
 .rebuy-cart__flyout-content {
   display: flex;
   flex-direction: column;
@@ -20006,7 +20028,7 @@ h4.ql-align-center {
 .rebuy-cart__flyout-item {
   padding-top: 0px !important;
   padding-bottom: 0px !important;
-  margin-top: 20px !important;
+  margin-top: 10px !important;
   margin-bottom: 20px !important;
   background: #fff;
   border-radius: 5px;
