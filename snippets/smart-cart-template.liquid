@@ -464,7 +464,25 @@
               <span v-html="discountTotal()"></span>
             </div>
           </div>
-
+        {% endraw %}
+        <div class="donations__container">
+          <p class="donations__text">Donate to Black Girls Code and Topicals will match 100%</p>
+          <div class="donations__buttons">
+            <button class="donations__button button button-inverted" onclick="donations()">
+              {{ 100 | money_without_trailing_zeros }}
+            </button>
+            <button class="donations__button button button-inverted">
+              {{ 200 | money_without_trailing_zeros }}
+            </button>
+            <button class="donations__button button button-inverted">
+              {{ 500 | money_without_trailing_zeros }}
+            </button>
+            <button class="donations__button button button-inverted">
+              {{ 1000 | money_without_trailing_zeros }}
+            </button>
+          </div>
+        </div>
+        {% raw %}
           <div class="rebuy-cart__flyout-integration" v-if="settings.integrations && settings.integrations.enabled"></div>
           <div class="rebuy-cart__flyout-apps">
             <div data-app-target="above_subtotal"></div>
@@ -494,13 +512,23 @@
             </div>
 
             <button
+              v-if="!hasItems()"
               v-show="hasCheckoutButton()"
-              class="rebuy-button rebuy-cart__checkout-button button block"
+              class="rebuy-button cart__checkout-empty rebuy-cart__checkout-button button block"
+              type="button"
+              v-bind:disabled="hasTermsEnabled() && !hasAcceptedTerms()">
+              <span v-html="checkoutLabel()"></span>
+            </button>
+            <button
+              v-if="hasItems()"
+              v-show="hasCheckoutButton()"
+              class="rebuy-button cart__checkout-items rebuy-cart__checkout-button button block"
               type="button"
               v-on:click="checkout()"
               v-bind:disabled="hasTermsEnabled() && !hasAcceptedTerms()">
               <span v-html="checkoutLabel()"></span>
             </button>
+
 
             <button
               v-if="hasViewCartButton()"

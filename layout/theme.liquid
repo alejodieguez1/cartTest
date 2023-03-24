@@ -422,6 +422,7 @@
         media="print"
         onload="this.media='all'">
     {%- endif -%}
+    <script src="{{ 'donations.js' | asset_url }}" defer></script>
 
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');

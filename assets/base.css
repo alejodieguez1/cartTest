@@ -19966,6 +19966,35 @@ h4.ql-align-center {
 }
 
 /* Cart Footer Styles */
+.donations__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+}
+.donations__text {
+  font-family: "ChaletBook-Bold";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: -0.03em;
+  color: #3c3c3b;
+}
+.donations__button {
+  background: #fff;
+  color: #3c3c3b;
+  border-radius: 100px;
+  border: 1px solid #3c3c3b;
+  font-family: "ChaletBook-Bold";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: -0.03em;
+  color: #3c3c3b;
+  width: 50px;
+  height: 26px;
+}
 .rebuy-cart__flyout-subtotal-label span,
 .rebuy-cart__flyout-subtotal-amount {
   font-family: "ChaletBook-Bold";
@@ -19987,6 +20016,14 @@ h4.ql-align-center {
 }
 .rebuy-cart__flyout-footer {
   border-style: none !important;
+}
+.cart__checkout-items {
+  background: linear-gradient(
+    90deg,
+    #ff823a 0%,
+    #ff5a61 49.48%,
+    #ff823a 100%
+  ) !important;
 }
 /* Products on cart styles */
 
