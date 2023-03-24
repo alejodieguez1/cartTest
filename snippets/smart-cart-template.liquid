@@ -115,7 +115,9 @@
                       fill="#FF5A61" />
                   </svg>
                   <p class="gifts-title">
-                    Choose from 4 free gift(s) on every order
+                    Choose from
+                    <span class="gifts-title-span">4</span>
+                    free gift(s) on every order
                   </p>
                   <label for="giftsToggle" class="gifts-label">
                     <svg
@@ -158,7 +160,27 @@
                             selected>Select Variant</option>
                           <option v-for="variant in freeProductOptions(product)" v-bind:value="variant.id">{{ variant.title }}</option>
                         </select>
-                        <div class="rebuy-cart__progress-free-product-variant-select-prompt" v-html="freeProductPrompt(product)"></div>
+                        <div class="rebuy-cart__progress-free-product-variant-select-prompt">
+                          <svg
+                            width="17"
+                            height="16"
+                            viewBox="0 0 17 16"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M8.5 3.33325V12.6666"
+                              stroke="#3C3C3B"
+                              stroke-width="1.1"
+                              stroke-linecap="round"
+                              stroke-linejoin="round" />
+                            <path
+                              d="M3.83337 8H13.1667"
+                              stroke="#3C3C3B"
+                              stroke-width="1.1"
+                              stroke-linecap="round"
+                              stroke-linejoin="round" />
+                          </svg>
+                          Add</div>
                       </div>
                     </div>
                     <button
@@ -191,15 +213,15 @@
                   </a>
                 </div>
                 <div class="rebuy-cart__flyout-item-info">
-                  <button
-                    class="rebuy-cart__flyout-item-remove"
-                    type="button"
-                    v-bind:alt="'Remove ' + item.product_title"
-                    v-on:click="removeItem(item)">
-                    <i class="far" v-bind:class="[(item.status == 'removing') ? 'fa-sync-alt fa-fast-spin' : 'fa-trash']"></i>
-                    <span class="sr-only">Remove {{ item.product_title }} from Cart</span>
-                  </button>
-
+                  <div class="rebuy-cart__flyout-item-price">
+                    <div v-if="itemHasDiscount(item)">
+                      <span class="rebuy-money sale" v-html="formatMoney(itemPrice(item))"></span>
+                      <span class="rebuy-money compare-at" v-html="formatMoney(compareAtPrice(item))"></span>
+                    </div>
+                    <div v-if="!itemHasDiscount(item)">
+                      <span class="rebuy-money" v-html="formatMoney(itemPrice(item))"></span>
+                    </div>
+                  </div>
                   <a
                     class="rebuy-cart__flyout-item-product-title"
                     v-bind:href="itemURL(item)"
@@ -255,16 +277,14 @@
                       </button>
                     </div>
                   </div>
-
-                  <div class="rebuy-cart__flyout-item-price">
-                    <div v-if="itemHasDiscount(item)">
-                      <span class="rebuy-money sale" v-html="formatMoney(itemPrice(item))"></span>
-                      <span class="rebuy-money compare-at" v-html="formatMoney(compareAtPrice(item))"></span>
-                    </div>
-                    <div v-if="!itemHasDiscount(item)">
-                      <span class="rebuy-money" v-html="formatMoney(itemPrice(item))"></span>
-                    </div>
-                  </div>
+                  <button
+                    class="rebuy-cart__flyout-item-remove"
+                    type="button"
+                    v-bind:alt="'Remove ' + item.product_title"
+                    v-on:click="removeItem(item)">
+                    <i class="far" v-bind:class="[(item.status == 'removing') ? 'fa-sync-alt fa-fast-spin' : 'fa-trash']"></i>
+                    <span class="sr-only">Remove {{ item.product_title }} from Cart</span>
+                  </button>
                 </div>
 
                 <div v-if="itemHasBMSM(item) && bMSMFinalTierNotReached(item)" class="rebuy-cart__flyout-item-buy-more-save-more">

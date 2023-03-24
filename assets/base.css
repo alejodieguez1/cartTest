@@ -19796,6 +19796,9 @@ em {
   border-radius: 5px;
   margin-top: 20px;
 }
+.gifts-title-span {
+  font-weight: 800;
+}
 .gifts-checkbox {
   display: none !important;
 }
@@ -19812,6 +19815,28 @@ em {
   border-radius: 0 0 5px 5px;
   padding: 10px !important;
   transition: 0.3s;
+}
+.rebuy-cart__progress-free-product {
+  max-width: 87px !important;
+}
+.rebuy-cart__progress-free-product-variant-select:focus-visible {
+  opacity: 0 !important;
+}
+.rebuy-cart__progress-free-product-variant-select-container {
+  margin-top: 8px !important;
+}
+.rebuy-cart__progress-free-product-variant-select-prompt {
+  justify-content: space-around !important;
+  font-family: "Chalet-LondonNineteenSixty";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.03em;
+  color: #3c3c3b !important;
+  border: 1px solid #3c3c3b;
+  border-radius: 100px !important;
+  background: #fff !important;
+  padding: 0 6px;
 }
 
 /* Empty Cart Styles */
@@ -19866,7 +19891,7 @@ h4.ql-align-center {
 .rebuy-cart__flyout-empty-cart-footer {
   padding: 0 !important;
   border: none !important;
-  border-style: none!important;
+  border-style: none !important;
 }
 
 /* Carousel Widget Styles */
@@ -19960,7 +19985,17 @@ h4.ql-align-center {
   background: #cccccc !important;
   border: none !important;
 }
+.rebuy-cart__flyout-footer {
+  border-style: none !important;
+}
 /* Products on cart styles */
+
+.rebuy-cart__flyout-item {
+  margin: 15px 15px 20px !important;
+  background: #fff;
+  border-radius: 5px;
+  padding: 20px !important;
+}
 .rebuy-cart__flyout-items {
   border: none !important;
 }
@@ -20023,15 +20058,6 @@ h4.ql-align-center {
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
-}
-
-.rebuy-cart__flyout-item {
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
-  margin-top: 10px !important;
-  margin-bottom: 20px !important;
-  background: #fff;
-  border-radius: 5px;
 }
 
 .rebuy-cart__flyout-item-product-title {
