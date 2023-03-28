@@ -19743,7 +19743,7 @@ em {
   font-family: "ChaletBook-Bold";
   text-transform: capitalize !important;
   font-weight: 400 !important;
-  color: #3c3c3b;
+  color: #3c3c3b !important;
 }
 .rebuy-cart__flyout-close {
   position: relative !important;
@@ -19762,7 +19762,7 @@ em {
   color: #3c3c3b;
 }
 .rebuy-cart__progress-bar-container {
-  padding: 20px 15px 0 !important;
+  padding: 20px 18px 0 !important;
   border: none !important;
 }
 .rebuy-cart__progress-bar-meter {
@@ -19804,6 +19804,7 @@ em {
 }
 .gifts-label {
   cursor: pointer;
+  margin-top: 6px;
 }
 #gifsToggle:checked ~ .gifts-content {
   border-radius: 5px 5px 0 0;
@@ -19837,6 +19838,7 @@ em {
   border-radius: 100px !important;
   background: #fff !important;
   padding: 0 6px;
+  cursor: pointer;
 }
 
 /* Empty Cart Styles */
@@ -19895,17 +19897,17 @@ h4.ql-align-center {
 }
 
 /* Carousel Widget Styles */
-
 .primary-title {
   font-family: "ChaletBook-Bold";
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.03em;
-  color: #3c3c3b;
+  color: #3c3c3b !important;
 }
 .rebuy-product-image {
   max-width: 100px !important;
+  height: 100px;
 }
 .rebuy-product-block {
   display: flex;
@@ -19913,14 +19915,28 @@ h4.ql-align-center {
   background: #fff !important;
   border-radius: 5px;
   padding: 10px !important;
+  margin-right: 10px !important;
+  width: 250px !important;
 }
 .rebuy-product-options {
   display: none;
 }
-.rebuy-product-price {
-  display: none;
+.rebuy-product-info {
+  display: flex !important;
+  justify-content: space-between;
+  padding-left: 10px;
 }
 .rebuy-product-title {
+  font-family: "Chalet-LondonNineteenSixty";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: -0.03em;
+  color: #3c3c3b;
+  margin: 0 !important;
+}
+.rebuy-product-price {
+  margin: 0 !important;
   font-family: "Chalet-LondonNineteenSixty";
   font-weight: 400;
   font-size: 14px;
@@ -19937,10 +19953,16 @@ h4.ql-align-center {
 .flickity-viewport {
   height: 120px !important;
 }
+.rebuy-product-actions {
+  position: absolute !important;
+  bottom: 13px !important;
+  right: 10px !important;
+}
 .rebuy-product-actions button.rebuy-button {
-  background: #ffffff !important;
-  color: #3c3c3b !important;
-  border: 1px solid #3c3c3b !important;
+  width: 120px !important;
+  background: linear-gradient(90deg, #ff823a 0%, #ff5a61 49.48%, #ff823a 100%);
+  color: #fff !important;
+  border: 0px solid #3c3c3b !important;
   border-radius: 5px;
   font-size: 14px;
   font-family: "Chalet-LondonNineteenSixty";
@@ -19960,6 +19982,7 @@ h4.ql-align-center {
   border: none !important;
   background: #f6f6f6 !important;
   margin-bottom: 10px !important;
+  height: 165px !important;
 }
 .rebuy-cart__progress-bar-container.below {
   padding: 0 !important;
@@ -20026,77 +20049,106 @@ h4.ql-align-center {
   ) !important;
 }
 /* Products on cart styles */
-
 .rebuy-cart__flyout-item {
-  margin: 15px 15px 20px !important;
+  margin: 15px 18px 20px !important;
   background: #fff;
   border-radius: 5px;
-  padding: 20px !important;
+  padding-right: 10px !important;
+  border-width: 0px !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
 }
 .rebuy-cart__flyout-items {
   border: none !important;
 }
-.rebuy-cart__flyout-content {
+
+.rebuy-cart__flyout-info-container {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between !important;
+  margin-bottom: 15px;
 }
 .rebuy-cart__flyout-item-info {
-  display: grid !important;
-  padding: 0 0 0 9px !important;
+  padding: 0 !important;
+}
+.rebuy-cart__flyout-remove-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.rebuy-cart__flyout-item-remove {
+  position: relative !important;
+}
+.remove-button {
+  font-family: "Chalet-LondonNineteenSixty" !important;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.03em;
+  color: #a1a1a1;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #a1a1a1;
+}
+.rebuy-money {
+  font-family: "ChaletBook-Bold";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: -0.03em;
+  color: #3c3c3b;
+}
+.rebuy-cart__flyout-item-media {
+  margin-right: 10px !important;
 }
 .rebuy-cart__flyout-item-product-title {
   font-family: "ChaletBook-Bold";
   width: fit-content;
   font-weight: 400 !important;
   text-transform: capitalize !important;
-  font-size: 14px;
-  line-height: 14px;
+  font-size: 14px !important;
+  line-height: 14px !important;
   letter-spacing: -0.03em;
   padding: 0 27px 0 0;
+  text-decoration: none;
 }
-
-.rebuy-cart__flyout-item-media img {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+.rebuy-cart__flyout-item-variant-title {
+  font-family: "ITCGaramondStd-LtCondIta";
+  font-style: italic;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: #686868;
+  margin-top: 5px !important;
 }
-
-.rebuy-cart__flyout-item-quantity-widget-label {
-  border: none !important;
-}
-
-.rebuy-cart__flyout-item-quantity-widget {
+.rebuy-cart__flyout-item-quantity {
+  width: 97px !important;
   border: 1px solid #000;
   border-radius: 5px;
 }
-
-/* .far.fa-trash {
-  display: none !important;
+.rebuy-cart__flyout-item-quantity-widget {
+  width: 100%;
+  border-width: 0px !important;
 }
-
-.rebuy-cart__flyout-item-remove {
-  position: relative !important;
-  width: 50px !important;
-  top: 15px !important;
-  left: 70% !important;
-} */
-
-.rebuy-cart__flyout-product-card-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.rebuy-cart__flyout-item-quantity-widget-button {
+  background: transparent !important;
+  width: 30px !important;
 }
-
+.rebuy-cart__flyout-item-quantity-widget-label {
+  border: none !important;
+  width: 30px !important;
+}
 .rebuy-cart__flyout-item-price {
   width: 100% !important;
 }
 
-.rebuy-cart__remove-text-button {
-  border-bottom: 1px solid #999;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
-}
-
 .rebuy-cart__flyout-item-product-title {
   min-width: 165px;
+}
+.rebuy-button {
+  background: linear-gradient(
+    90deg,
+    #ff823a 0%,
+    #ff5a61 49.48%,
+    #ff823a 100%
+  ) !important;
+  border-color: transparent !important;
+  color: #fff !important;
 }
