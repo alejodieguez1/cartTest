@@ -11,17 +11,24 @@
       v-bind:aria-hidden="!visible">
       <div class="rebuy-cart__flyout">
         <div class="rebuy-cart__flyout-header">
-          <h2
-            id="SmartCart_title"
-            class="rebuy-cart__flyout-title"
-            v-html="settings.language.cart_title"></h2>
-          <button
-            class="rebuy-cart__flyout-close"
-            type="button"
-            v-on:click="hide()">
-            <i class="fal fa-times"></i>
-            <span class="sr-only">Close Cart</span>
-          </button>
+          <div class="rebuy-cart__flyout-header-items">
+            <button
+              class="rebuy-cart__flyout-close"
+              type="button"
+              v-on:click="hide()">
+              <i class="fal fa-times"></i>
+              <span class="sr-only">Close Cart</span>
+            </button>
+            <h2
+              id="SmartCart_title"
+              class="rebuy-cart__flyout-title"
+              v-html="settings.language.cart_title"></h2>
+          </div>
+          <div class="item-count">
+            <p class="item-counter" v-html="itemCount()"></p>
+            <span v-if="itemCount() > 1">Items</span>
+            <span v-else="itemCount() <= 1">Item</span>
+          </div>
         </div>
         <div class="rebuy-cart__flyout-body">
           <div
