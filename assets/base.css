@@ -19850,6 +19850,12 @@ em {
 .rebuy-cart__progress-free-product-variant-select:focus-visible {
   opacity: 0 !important;
 }
+.rebuy-cart__progress-free-product-variant-select:focus
+  + .rebuy-cart__progress-free-product-variant-select-prompt,
+.rebuy-cart__progress-free-product-variant-select:active
+  + .rebuy-cart__progress-free-product-variant-select-prompt {
+  border: 1px solid #3c3c3b !important;
+}
 .rebuy-cart__progress-free-product-variant-select-container {
   margin-top: 8px !important;
 }
