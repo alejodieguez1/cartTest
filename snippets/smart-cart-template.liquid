@@ -301,7 +301,7 @@
 
                   <div class="rebuy-cart__flyout-item-subscription">
                     <button
-                      class="rebuy-button outline"
+                      class="subscribe__button outline"
                       v-if="!item.product.subscription || item.status == 'downgrading' || item.status == 'upgrading'"
                       v-bind:alt="'Switch ' + item.product_title + ' to a Subscription'"
                       v-bind:disabled="(item.status == 'downgrading' || item.status == 'upgrading')"
@@ -490,7 +490,7 @@
             <button
               v-if="!hasItems()"
               v-show="hasCheckoutButton()"
-              class="rebuy-button cart__checkout-empty rebuy-cart__checkout-button button block"
+              class="cart__checkout-empty rebuy-cart__checkout-button button block"
               type="button"
               v-bind:disabled="hasTermsEnabled() && !hasAcceptedTerms()">
               <span v-html="checkoutLabel()"></span>
