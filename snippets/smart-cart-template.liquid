@@ -270,7 +270,7 @@
                           <button
                             class="rebuy-cart__flyout-item-quantity-widget-button"
                             v-bind:alt="'Increase quantity of ' + item.product_title"
-                            v-on:click="increaseItem(item)"
+                            v-on:click="increaseItem(item) "
                             type="button">
                             <i class="far" v-bind:class="[(item.status == 'increasing') ? 'fa-sync-alt fa-fast-spin' : 'fa-plus']"></i>
                             <span class="sr-only">Increase quantity of {{ item.product_title }}</span>
@@ -415,7 +415,14 @@
             </div>
           </div>
         </div>
-
+        <div class="limit__error-modal hide">
+          <div class="limit__error-container">
+            <div class="close-container">
+              <i class="fal fa-times"></i>
+            </div>
+            <h2 class="limit__error-title">You can only add 3 items</h2>
+          </div>
+        </div>
         <div class="rebuy-cart__flyout-footer">
 
           <div class="rebuy-cart__flyout-discount-container" v-if="discountEnabled()">
@@ -564,7 +571,6 @@
           <div data-app-target="below_checkout"></div>
         </div>
       </div>
-
       <div class="rebuy-cart__background" v-on:click="hide()"></div>
       <div
         id="rebuy-cart-live-region"
