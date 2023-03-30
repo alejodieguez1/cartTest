@@ -505,7 +505,7 @@
             <button
               v-if="hasItems()"
               v-show="hasCheckoutButton()"
-              class="rebuy-button cart__checkout-items rebuy-cart__checkout-button button block"
+              class="cart__checkout-items rebuy-cart__checkout-button button block"
               type="button"
               v-on:click="checkout()"
               v-bind:disabled="hasTermsEnabled() && !hasAcceptedTerms()">

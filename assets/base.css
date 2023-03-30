@@ -19774,6 +19774,7 @@ em {
 }
 .rebuy-cart__flyout-close {
   position: relative !important;
+  padding-top: 2px !important;
 }
 .rebuy-cart__flyout-body {
   background: #f6f6f6 !important;
@@ -19796,7 +19797,7 @@ em {
   background-color: #f6f6f6 !important;
   border: 1px solid;
   border-color: #ff5a61;
-  padding: 1.4px 1px !important;
+  padding: 1px 2px !important;
 }
 .rebuy-cart__progress-bar-meter-fill {
   background: #ff5a61 !important;
@@ -19996,21 +19997,28 @@ p.ql-align-center {
   bottom: 13px !important;
   right: 10px !important;
 }
-.rebuy-product-actions button.rebuy-button {
+.rebuy-button {
   width: 120px !important;
-  background: linear-gradient(90deg, #ff823a 0%, #ff5a61 49.48%, #ff823a 100%);
+  background: linear-gradient(
+    90deg,
+    #ff823a 0%,
+    #ff5a61 49.48%,
+    #ff823a 100%
+  ) !important;
   color: #fff !important;
   border: 0px solid #3c3c3b !important;
-  border-radius: 5px;
-  font-size: 14px;
+  font-size: 14px !important;
   font-family: "Chalet-LondonNineteenSixty";
   cursor: pointer;
-  height: 41px;
+  height: 41px !important;
   letter-spacing: -0.03em;
-  padding: 8px 20px;
-  box-sizing: border-box;
   transition: 0.3s;
   text-decoration: none;
+}
+.btn-inactive {
+  background: #fff !important;
+  border: 1px solid #3c3c3b !important;
+  color: #3c3c3b !important;
 }
 .rebuy-product-grid {
   margin-top: 10px !important;
@@ -20136,7 +20144,10 @@ p.ql-align-center {
   font-size: 14px;
   line-height: 14px;
   letter-spacing: -0.03em;
-  color: #3c3c3b;
+  color: #3c3c3b !important;
+}
+.rebuy-money.sale {
+  color: #44be70 !important;
 }
 .rebuy-cart__flyout-item-media {
   margin-right: 10px !important;
@@ -20150,11 +20161,12 @@ p.ql-align-center {
   line-height: 14px !important;
   letter-spacing: -0.03em;
   padding: 0 27px 0 0;
+  min-width: 165px;
+  color: #3c3c3b !important;
   text-decoration: none;
 }
 .rebuy-cart__flyout-item-variant-title {
   font-family: "ITCGaramondStd-LtCondIta";
-  font-style: italic;
   font-weight: 300;
   font-size: 14px !important;
   line-height: 17px !important;
@@ -20180,14 +20192,11 @@ p.ql-align-center {
 }
 .rebuy-cart__flyout-item-price {
   width: 100% !important;
+  margin: 0 !important;
 }
 .rebuy-cart__flyout-item-price div {
   display: flex;
   flex-direction: column;
-}
-
-.rebuy-cart__flyout-item-product-title {
-  min-width: 165px;
 }
 .subscribe__button {
   background: linear-gradient(
