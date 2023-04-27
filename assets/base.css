@@ -19831,7 +19831,7 @@ em {
 }
 .gifs-title {
   margin: 0;
-  margin-left: 10px;
+  margin-left: 10px !important;
 }
 .gifts-title-span {
   font-weight: 800;
@@ -19847,7 +19847,7 @@ em {
 #gifsToggle:checked ~ .gifts-content {
   border-radius: 5px 5px 0 0;
 }
-#giftsToggle:checked ~ .gifts-label {
+#giftsToggle:checked ~ .gifts__arrow {
   transform: rotate(180deg);
   transition: 0.3s;
 }
