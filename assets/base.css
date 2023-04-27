@@ -19823,6 +19823,15 @@ em {
   background: #fff !important;
   border-radius: 5px;
   margin-top: 20px;
+  height: 44px;
+}
+.gifts__content-title {
+  display: flex;
+  align-items: center;
+}
+.gifs-title {
+  margin: 0;
+  margin-left: 10px;
 }
 .gifts-title-span {
   font-weight: 800;
@@ -19833,9 +19842,14 @@ em {
 .gifts-label {
   cursor: pointer;
   margin-top: 6px;
+  transition: 0.3s;
 }
 #gifsToggle:checked ~ .gifts-content {
   border-radius: 5px 5px 0 0;
+}
+#giftsToggle:checked ~ .gifts-label {
+  transform: rotate(180deg);
+  transition: 0.3s;
 }
 #giftsToggle:checked ~ .rebuy-cart__progress-free-products-list {
   height: 100% !important;

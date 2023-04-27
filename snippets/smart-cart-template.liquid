@@ -128,6 +128,10 @@
                       free gift(s) on every order
                     </p>
                   </div>
+                  <input
+                    type="checkbox"
+                    id="giftsToggle"
+                    class="gifts-checkbox">
                   <label for="giftsToggle" class="gifts-label">
                     <svg
                       width="24"
@@ -143,10 +147,6 @@
                     </svg>
                   </label>
                 </div>
-                <input
-                  type="checkbox"
-                  id="giftsToggle"
-                  class="gifts-checkbox">
                 <div class="rebuy-cart__progress-free-products-list" ref="freeProductList">
                   <div
                     v-for="product in earnedProducts(bar)"
