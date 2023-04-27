@@ -109,23 +109,25 @@
 
               <div class="rebuy-cart__progress-free-products" v-if="getBarLayout(bar) == 'above' && earnedProducts(bar).length > 0">
                 <div class="gifts-content">
-                  <svg
-                    width="10"
-                    height="10"
-                    viewBox="0 0 10 10"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <circle
-                      cx="5"
-                      cy="5"
-                      r="5"
-                      fill="#FF5A61" />
-                  </svg>
-                  <p class="gifts-title">
-                    Choose from
-                    <span class="gifts-title-span">4</span>
-                    free gift(s) on every order
-                  </p>
+                  <div class="gifts__content-title">
+                    <svg
+                      width="10"
+                      height="10"
+                      viewBox="0 0 10 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <circle
+                        cx="5"
+                        cy="5"
+                        r="5"
+                        fill="#FF5A61" />
+                    </svg>
+                    <p class="gifts-title">
+                      Choose from
+                      <span class="gifts-title-span">4</span>
+                      free gift(s) on every order
+                    </p>
+                  </div>
                   <label for="giftsToggle" class="gifts-label">
                     <svg
                       width="24"
