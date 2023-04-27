@@ -19829,7 +19829,7 @@ em {
   display: flex;
   align-items: center;
 }
-.gifs-title {
+.gifts-title {
   margin: 0;
   margin-left: 10px !important;
 }
@@ -19844,13 +19844,13 @@ em {
   margin-top: 6px;
   transition: 0.3s;
 }
-#gifsToggle:checked ~ .gifts-content {
+#giftsToggle:checked ~ .gifts-content {
   border-radius: 5px 5px 0 0;
 }
-#giftsToggle:checked ~ .gifts__arrow {
+/* #giftsToggle:checked ~ .gifts__arrow {
   transform: rotate(180deg);
   transition: 0.3s;
-}
+} */
 #giftsToggle:checked ~ .rebuy-cart__progress-free-products-list {
   height: 100% !important;
   opacity: 1;
