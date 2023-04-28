@@ -19831,12 +19831,10 @@ em {
   display: flex;
   align-items: center;
 }
-.gifts__content-title svg {
-  transform: translateY(-0.03px);
-}
 .gifts-title {
   margin: 0;
   margin-left: 10px !important;
+  margin-top: 1px;
 }
 .gifts-title-span {
   font-weight: 800;
