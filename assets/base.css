@@ -20168,7 +20168,7 @@ button.flickity-button.next {
   flex-direction: column;
   justify-content: space-between;
   position: relative !important;
-  width: 30% !important;
+  width: 35% !important;
 }
 .rebuy-cart__flyout-item-remove {
   top: 50px !important;
@@ -20250,6 +20250,7 @@ button.flickity-button.next {
 }
 .rebuy-cart__flyout-item-price div .sale {
   order: 2;
+  margin-left: 5px !important;
 }
 .rebuy-cart__flyout-item-price div .sale {
   order: 1;
