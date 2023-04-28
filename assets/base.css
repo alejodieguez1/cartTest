@@ -19869,8 +19869,8 @@ em {
   max-width: 140px !important;
 }
 .rebuy-cart__progress-free-product-image {
-  width: 100px !important;
-  height: 90px !important;
+  width: 77px !important;
+  height: 65px !important;
 }
 .rebuy-cart__progress-free-product-info {
   display: flex !important;
@@ -20321,6 +20321,10 @@ button.flickity-button.next {
   /* .rebuy-cart__flyout-recommendations {
     margin: 0 !important;
   } */
+  .rebuy-cart__progress-free-product-image {
+    width: 100px !important;
+    height: 90px !important;
+  }
   .item-count p,
   .item-count span {
     font-size: 18px;
