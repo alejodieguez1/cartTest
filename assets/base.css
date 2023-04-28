@@ -19997,6 +19997,9 @@ p.ql-align-center {
 .rebuy-product-options {
   display: none;
 }
+.rebuy-product-image img {
+  max-height: 70% !important;
+}
 .rebuy-product-info {
   display: flex !important;
   justify-content: space-between;
