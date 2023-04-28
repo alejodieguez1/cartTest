@@ -19809,7 +19809,9 @@ em {
 }
 
 /* Rebuy Gifts */
-
+.rebuy-cart__progress-free-products {
+  position: relative;
+}
 .rebuy-cart__progress-free-products-list {
   height: 0 !important;
   opacity: 0;
@@ -19843,14 +19845,18 @@ em {
   cursor: pointer;
   margin-top: 6px;
   transition: 0.3s;
+  position: absolute;
+  top: 35px;
+  right: 15px;
 }
 #giftsToggle:checked ~ .gifts-content {
   border-radius: 5px 5px 0 0;
 }
-/* #giftsToggle:checked ~ .gifts__arrow {
+#giftsToggle:checked ~ .gifts-label {
+  top: 27px;
   transform: rotate(180deg);
   transition: 0.3s;
-} */
+}
 #giftsToggle:checked ~ .rebuy-cart__progress-free-products-list {
   height: 100% !important;
   opacity: 1;
@@ -19860,7 +19866,19 @@ em {
   transition: 0.3s;
 }
 .rebuy-cart__progress-free-product {
-  max-width: 87px !important;
+  max-width: 140px !important;
+}
+.rebuy-cart__progress-free-product-image {
+  width: 100px !important;
+  height: 90px !important;
+}
+.rebuy-cart__progress-free-product-info {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+.rebuy-cart__progress-free-product-variant-select-container {
+  width: 62px !important;
 }
 .rebuy-cart__progress-free-product-variant-select:focus-visible {
   opacity: 0 !important;
@@ -20149,9 +20167,12 @@ button.flickity-button.next {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative !important;
+  width: 30% !important;
 }
 .rebuy-cart__flyout-item-remove {
-  position: relative !important;
+  top: 50px !important;
+  right: 26px !important;
 }
 .remove-button {
   font-family: "Chalet-LondonNineteenSixty" !important;
@@ -20215,10 +20236,23 @@ button.flickity-button.next {
 .rebuy-cart__flyout-item-price {
   width: 100% !important;
   margin: 0 !important;
+  position: absolute !important;
+  right: 0 !important;
 }
 .rebuy-cart__flyout-item-price div {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  width: 100%;
+  justify-content: end !important;
+}
+.rebuy-cart__flyout-item-price div span {
+  width: 70px;
+}
+.rebuy-cart__flyout-item-price div .sale {
+  order: 2;
+}
+.rebuy-cart__flyout-item-price div .sale {
+  order: 1;
 }
 .subscribe__button {
   background: linear-gradient(
