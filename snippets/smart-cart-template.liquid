@@ -623,13 +623,7 @@
   function formatingMoney() {
     const moneys = document.querySelectorAll(".rebuy-money");
     const buttons = document.querySelectorAll(".donations__button");
-    const subtotal = document.querySelector(".rebuy-cart__flyout-subtotal-amount");
 
-    if (subtotal.textContent.includes(".")) {
-      subtotal.innerHTML = subtotal.innerHTML.replace('.00', '');
-    } else {
-      subtotal.innerHTML = subtotal.innerHTML.replace(',00', '');
-    };
     moneys.forEach((money) => {
       if (money.textContent.includes(".")) {
         money.innerHTML = money.innerHTML.replace('.00', '');
