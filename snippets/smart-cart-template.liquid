@@ -464,11 +464,28 @@
                 <i class="far fa-times"></i>
               </span>
             </div>
-
             <div class="rebuy-cart__flyout-discount-amount" v-if="shouldShowDiscountSubtotal()">
               <span v-html="discountTotal()"></span>
             </div>
           </div>
+
+        {% endraw %}
+        <div class="donations__container">
+          <p class="donations__text">Donate to Black Girls Code and Topicals will match 100%</p>
+          <div class="donations__buttons">
+            {% for product in collections['donations'].products %}
+              {% for variant in product.variants %}
+                <button
+                  id="{{ variant.id }}"
+                  class="donations__button button button-inverted"
+                  onClick="addDonation({{ variant.id }})">
+                  {{ variant.title | money_without_trailing_zeros }}
+                </button>
+              {% endfor %}
+            {% endfor %}
+          </div>
+        </div>
+        {% raw %}
           <div class="rebuy-cart__flyout-integration" v-if="settings.integrations && settings.integrations.enabled"></div>
           <div class="rebuy-cart__flyout-apps">
             <div data-app-target="above_subtotal"></div>
@@ -582,3 +599,24 @@
     </div>
   </script>
 {% endraw %}
+
+<script type="application/json" data-id="donations-data">
+  {{ collections['donations'].products | json }}
+</script>
+
+<script>
+  function addDonation(variantId) {
+    const donationsDataStr = document.querySelector('[data-id="donations-data"]').innerHTML;
+    const donationsData = JSON.parse(donationsDataStr);
+    const variants = donationsData.reduce((acc, value) => {
+      return [
+        ...acc,
+        ...value.variants
+      ];
+    }, []);
+    const selectedVariant = variants.find((variant) => {
+      return + variant.id === + variantId;
+    });
+    window.Rebuy.Cart.addItem(selectedVariant);
+  }
+</script>
