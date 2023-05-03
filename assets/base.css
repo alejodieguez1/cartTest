@@ -20111,6 +20111,10 @@ button.flickity-button.next {
   width: 50px;
   height: 26px;
 }
+.donations__button:hover {
+  background: #3c3c3b;
+  color: #fff;
+}
 .rebuy-cart__flyout-subtotal-label span,
 .rebuy-cart__flyout-subtotal-amount {
   font-family: "ChaletBook-Bold";
