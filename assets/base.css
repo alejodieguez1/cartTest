@@ -19781,6 +19781,9 @@ em {
 }
 
 /* Rebuy Progress Bar */
+.rebuy-cart__progress-bar-wrapper {
+  text-align: center;
+}
 .rebuy-cart__progress-bar-prompt {
   font-family: "ChaletBook-Bold";
   font-weight: 400;
