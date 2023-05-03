@@ -479,7 +479,7 @@
                   id="{{ variant.id }}"
                   class="donations__button button button-inverted"
                   onClick="addDonation({{ variant.id }})">
-                  {{ variant.title | money_without_trailing_zeros }}
+                  {{ variant.title | money_without_currency }}
                 </button>
               {% endfor %}
             {% endfor %}
