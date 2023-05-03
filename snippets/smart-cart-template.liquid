@@ -618,5 +618,13 @@
       return + variant.id === + variantId;
     });
     window.Rebuy.Cart.addItem(selectedVariant);
-  }
+  };
+
+  document.addEventListener('rebuy:cart.ready', (event) => {
+    const moneys = document.querySelectorAll(".rebuy-money");
+    console.log(moneys);
+    moneys.forEach((money) => {
+      money.innerHTML = money.innerHTML.replace('.00', '');
+    });
+  });
 </script>
