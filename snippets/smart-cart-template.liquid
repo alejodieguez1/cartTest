@@ -620,19 +620,30 @@
     window.Rebuy.Cart.addItem(selectedVariant);
   };
 
-  document.addEventListener('rebuy:cart.ready', (event) => {
+  function formatingMoney() {
     const moneys = document.querySelectorAll(".rebuy-money");
+    const buttons = document.querySelectorAll(".donations__button");
     moneys.forEach((money) => {
-      money.innerHTML = money.innerHTML.replace(',00', '');
-      money.innerHTML = money.innerHTML.replace('.00', '');
+      if (money.textContent.includes(".")) {
+        money.innerHTML = money.innerHTML.replace('.00', '');
+      } else {
+        money.innerHTML = money.innerHTML.replace(',00', '');
+      }
     });
+    buttons.forEach((button) => {
+      if (button.textContent.includes(".")) {
+        button.innerHTML = button.innerHTML.replace('.00', '');
+      } else {
+        button.innerHTML = button.innerHTML.replace(',00', '');
+      }
+    });
+  }
+
+  document.addEventListener('rebuy:cart.ready', (event) => {
+    formatingMoney();
   });
 
   document.addEventListener('rebuy:cart.change', (event) => {
-    const moneys = document.querySelectorAll(".rebuy-money");
-    moneys.forEach((money) => {
-      money.innerHTML = money.innerHTML.replace(',00', '');
-      money.innerHTML = money.innerHTML.replace('.00', '');
-    });
+    formatingMoney();
   });
 </script>
