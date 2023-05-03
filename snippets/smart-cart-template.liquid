@@ -620,7 +620,7 @@
     window.Rebuy.Cart.addItem(selectedVariant);
   };
 
-  document.addEventListener('rebuy:cart.ready', (event) => {
+  document.addEventListener('rebuy:cart.change', (event) => {
     const moneys = document.querySelectorAll(".rebuy-money");
     console.log(moneys);
     moneys.forEach((money) => {
