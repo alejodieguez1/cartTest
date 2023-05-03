@@ -495,9 +495,7 @@
             <div class="rebuy-cart__flyout-subtotal-label">
               <span v-html="subtotalLabel()"></span>
             </div>
-            <span class="rebuy-cart__flyout-subtotal-amount">
-              {{ subtotal() | money_without_trailing_zeros }}
-            </span>
+            <span class="rebuy-cart__flyout-subtotal-amount" v-html="subtotal()"></span>
           </div>
           <div data-app-target="below_subtotal"></div>
 
