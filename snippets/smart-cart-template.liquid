@@ -636,7 +636,6 @@
     const buttons = document.querySelectorAll(".donations__button");
 
     moneys.forEach((money) => {
-      debugger
       const moneyVal = money.dataset.value || money.textContent;
       var numb = + moneyVal.match(/\d/g).join("");
       const newMoneyVal = (numb / 100).toFixed(0);
