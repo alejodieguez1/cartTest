@@ -663,5 +663,7 @@
 
   document.addEventListener('rebuy:cart.ready', formatingMoney);
 
-  document.addEventListener('rebuy:cart.change', formatingMoney);
+  document.addEventListener('rebuy:cart.change', (event) => {
+    console.log(formatingMoney);
+  });
 </script>
