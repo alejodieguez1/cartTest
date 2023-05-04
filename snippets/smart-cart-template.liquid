@@ -628,7 +628,7 @@
     moneys.forEach((money) => {
 
       const moneyVal = money.textContent;
-      var numb = moneyVal.match(/\d/g);
+      var numb = moneyVal.match(/\d/g).join("");
       console.log(numb);
       if (money.textContent.includes(".")) {
         money.innerHTML = money.innerHTML.replace('.00', '');
