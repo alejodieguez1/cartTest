@@ -640,12 +640,12 @@
       const moneyVal = money.textContent;
       var numb = + moneyVal.match(/\d/g).join("");
       const newMoneyVal = (numb / 100).toFixed(0);
-      console.log(numb);
 
       if (money.querySelector("span")) {
         const srStr = money.querySelector(".sr-only").textContent
         money.innerHTML = `<span class="sr-only">${srStr}</span><span>$${newMoneyVal}</span>`;
       } else {
+        console.log(numb);
         money.innerHTML = `$${newMoneyVal}`;
       }
     });
