@@ -20199,6 +20199,7 @@ button.flickity-button.next {
   border-bottom: 1px solid #a1a1a1;
 }
 .rebuy-money {
+  display: block;
   font-family: "ChaletBook-Bold";
   font-weight: 400;
   font-size: 14px;
@@ -20209,7 +20210,7 @@ button.flickity-button.next {
   transition: opacity 0.3s ease;
 }
 .rebuy-money-hidden {
-  opacity: 0;
+  display: none;
 }
 .rebuy-cart__flyout-item-media {
   margin-right: 10px !important;

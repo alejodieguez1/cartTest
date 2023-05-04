@@ -284,11 +284,17 @@
                     <div class="rebuy-cart__flyout-remove-container">
                       <div class="rebuy-cart__flyout-item-price">
                         <div v-if="itemHasDiscount(item)">
-                          <span class="rebuy-money rebuy-money-hidden sale" v-html="itemPrice(item)"></span>
-                          <span class="rebuy-money rebuy-money-hidden compare-at" v-html="compareAtPrice(item)"></span>
+                          <span class="rebuy-money sale">
+                            <div class='rebuy-money-hidden'>{{ itemPrice(item) }}</div>
+                          </span>
+                          <span class="rebuy-money compare-at">
+                            <div class='rebuy-money-hidden'>{{ compareAtPrice(item) }}</div>
+                          </span>
                         </div>
                         <div v-if="!itemHasDiscount(item)">
-                          <span class="rebuy-money rebuy-money-hidden" v-html="itemPrice(item)"></span>
+                          <span class="rebuy-money">
+                            <div class='rebuy-money-hidden'>{{ itemPrice(item) }}</div>
+                          </span>
                         </div>
                       </div>
                       <button
