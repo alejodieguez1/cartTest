@@ -641,11 +641,11 @@
       const newMoneyVal = (numb / 100).toFixed(0);
 
       if (Array.from(money.querySelectorAll("span")).length > 1) {
+        console.log(moneyVal);
         const srStr = money.querySelector(".sr-only").textContent
         money.innerHTML = `<span class="sr-only">${srStr}</span><span>$${newMoneyVal}</span>`;
         money.dataset.value = moneyVal;
       } else {
-        console.log(moneyVal);
         money.innerHTML = `<span>$${newMoneyVal}</span>`;
         money.dataset.value = moneyVal;
       }
