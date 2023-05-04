@@ -624,12 +624,12 @@
     const moneys = document.querySelectorAll(".rebuy-money");
     const buttons = document.querySelectorAll(".donations__button");
     moneys.forEach((money) => {
+      console.log(money.innerHTML);
       if (money.textContent.includes(".")) {
         money.innerHTML = money.innerHTML.replace('.00', '');
       } else {
         money.innerHTML = money.innerHTML.replace(',00', '');
       }
-      console.log(money.innerHTML);
     });
     buttons.forEach((button) => {
       if (button.textContent.includes(".")) {
