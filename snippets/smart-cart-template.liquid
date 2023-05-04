@@ -620,35 +620,45 @@
     window.Rebuy.Cart.addItem(selectedVariant);
   };
 
-  function formatingMoney() {
-    setTimeout(() => {
-      const moneys = document.querySelectorAll(".rebuy-money");
-      const buttons = document.querySelectorAll(".donations__button");
 
-      moneys.forEach((money) => {
-
-        const moneyVal = money.textContent;
-        var numb = + moneyVal.match(/\d/g).join("");
-        const newMoneyVal = (numb / 100).toFixed(0);
-        console.log(numb);
-
-        if (money.querySelector("span")) {
-          const srStr = money.querySelector(".sr-only").textContent
-          money.innerHTML = `<span class="sr-only">${srStr}</span><span>$${newMoneyVal}</span>`;
-        } else {
-          money.innerHTML = `$${newMoneyVal}`;
-        }
-      });
-      buttons.forEach((button) => {
-        if (button.textContent.includes(".")) {
-          button.innerHTML = button.innerHTML.replace('.00', '');
-        } else {
-          button.innerHTML = button.innerHTML.replace(',00', '');
-        }
-      });
-    }, 300)
-
+  function debounce(func, timeout = 300) {
+    let timer;
+    return(...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        func.apply(this, args);
+      }, timeout);
+    };
   };
+
+  const formatingMoney = debounce(() => {
+    const moneys = document.querySelectorAll(".rebuy-money");
+    const buttons = document.querySelectorAll(".donations__button");
+
+    moneys.forEach((money) => {
+
+      const moneyVal = money.textContent;
+      var numb = + moneyVal.match(/\d/g).join("");
+      const newMoneyVal = (numb / 100).toFixed(0);
+      console.log(numb);
+
+      if (money.querySelector("span")) {
+        const srStr = money.querySelector(".sr-only").textContent
+        money.innerHTML = `<span class="sr-only">${srStr}</span><span>$${newMoneyVal}</span>`;
+      } else {
+        money.innerHTML = `$${newMoneyVal}`;
+      }
+    });
+    buttons.forEach((button) => {
+      if (button.textContent.includes(".")) {
+        button.innerHTML = button.innerHTML.replace('.00', '');
+      } else {
+        button.innerHTML = button.innerHTML.replace(',00', '');
+      }
+    });
+  });
+
+
 
   document.addEventListener('rebuy:cart.ready', (event) => {
     formatingMoney();
