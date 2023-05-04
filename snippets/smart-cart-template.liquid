@@ -284,11 +284,11 @@
                     <div class="rebuy-cart__flyout-remove-container">
                       <div class="rebuy-cart__flyout-item-price">
                         <div v-if="itemHasDiscount(item)">
-                          <span class="rebuy-money sale" v-html="formatMoney(itemPrice(item),  '{{amount_no_decimals}}')"></span>
-                          <span class="rebuy-money compare-at" v-html="formatMoney(compareAtPrice(item), '{{amount_no_decimals}}')"></span>
+                          <span class="rebuy-money sale" v-html="itemPrice(item)"></span>
+                          <span class="rebuy-money compare-at" v-html="compareAtPrice(item)"></span>
                         </div>
                         <div v-if="!itemHasDiscount(item)">
-                          <span class="rebuy-money" v-html="formatMoney(itemPrice(item), '{{amount_no_decimals}}')"></span>
+                          <span class="rebuy-money" v-html="itemPrice(item)"></span>
                         </div>
                       </div>
                       <button
@@ -619,4 +619,42 @@
     });
     window.Rebuy.Cart.addItem(selectedVariant);
   };
+
+  function formatingMoney() {
+    const moneys = document.querySelectorAll(".rebuy-money");
+    const buttons = document.querySelectorAll(".donations__button");
+
+
+    moneys.forEach((money) => {
+
+      const moneyVal = money.textContent;
+      var numb = + moneyVal.match(/\d/g).join("");
+      const newMoneyVal = (numb).toFixed(0);
+      console.log(money.innerHTML)
+      console.log(newMoneyVal);
+
+      if (money.querySelector("span")) {
+        const srStr = money.querySelector(".sr-only").textContent
+        money.innerHTML = `<span class="sr-only">${srStr}</span><span>$${newMoneyVal}</span>`;
+      } else {
+        money.innerHTML = `$${newMoneyVal}`;
+      }
+      console.log(money.innerHTML)
+    });
+    buttons.forEach((button) => {
+      if (button.textContent.includes(".")) {
+        button.innerHTML = button.innerHTML.replace('.00', '');
+      } else {
+        button.innerHTML = button.innerHTML.replace(',00', '');
+      }
+    });
+  };
+
+  document.addEventListener('rebuy:cart.ready', (event) => {
+    formatingMoney();
+  });
+
+  document.addEventListener('rebuy:cart.change', (event) => {
+    formatingMoney();
+  });
 </script>
