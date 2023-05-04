@@ -630,7 +630,7 @@
         const moneyVal = money.textContent;
         var numb = + moneyVal.match(/\d/g).join("");
         const newMoneyVal = (numb / 100).toFixed(0);
-        console.log(moneyVal);
+        console.log(numb);
 
         if (money.querySelector("span")) {
           const srStr = money.querySelector(".sr-only").textContent
