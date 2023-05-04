@@ -619,4 +619,32 @@
     });
     window.Rebuy.Cart.addItem(selectedVariant);
   };
+
+  function formatingMoney() {
+    const moneys = document.querySelectorAll(".rebuy-money");
+    const buttons = document.querySelectorAll(".donations__button");
+
+    moneys.forEach((money) => {
+      if (money.textContent.includes(".")) {
+        money.innerHTML = money.innerHTML.replace('.00', '');
+      } else {
+        money.innerHTML = money.innerHTML.replace(',00', '');
+      }
+    });
+    buttons.forEach((button) => {
+      if (button.textContent.includes(".")) {
+        button.innerHTML = button.innerHTML.replace('.00', '');
+      } else {
+        button.innerHTML = button.innerHTML.replace(',00', '');
+      }
+    });
+  };
+
+  document.addEventListener('rebuy:cart.ready', (event) => {
+    formatingMoney();
+  });
+
+  document.addEventListener('rebuy:cart.change', (event) => {
+    formatingMoney();
+  });
 </script>
