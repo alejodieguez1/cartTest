@@ -629,7 +629,7 @@
 
       const moneyVal = money.textContent;
       var numb = + moneyVal.match(/\d/g).join("");
-      const newMoneyVal = (numb).toFixed(0);
+      const newMoneyVal = (numb / 100).toFixed(0);
       console.log(money.innerHTML)
       console.log(newMoneyVal);
 
