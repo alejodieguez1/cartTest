@@ -631,7 +631,7 @@
     };
   };
 
-  const formatingMoney = debounce(() => {
+  function formatingMoney() {
     const moneys = document.querySelectorAll(".rebuy-money");
     const buttons = document.querySelectorAll(".donations__button");
 
@@ -656,7 +656,7 @@
         button.innerHTML = button.innerHTML.replace(',00', '');
       }
     });
-  });
+  };
 
 
 
