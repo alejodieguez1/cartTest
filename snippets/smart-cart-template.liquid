@@ -630,8 +630,6 @@
       const moneyVal = money.textContent;
       var numb = + moneyVal.match(/\d/g).join("");
       const newMoneyVal = (numb / 100).toFixed(0);
-      console.log(money.innerHTML)
-      console.log(newMoneyVal);
 
       if (money.querySelector("span")) {
         const srStr = money.querySelector(".sr-only").textContent
@@ -639,7 +637,6 @@
       } else {
         money.innerHTML = `$${newMoneyVal}`;
       }
-      console.log(money.innerHTML)
     });
     buttons.forEach((button) => {
       if (button.textContent.includes(".")) {
@@ -653,8 +650,11 @@
   document.addEventListener('rebuy:cart.ready', (event) => {
     formatingMoney();
   });
-
+  document.addEventListener('rebuy:cart.add', (event) => {
+    formatingMoney();
+  });
   document.addEventListener('rebuy:cart.change', (event) => {
+    console.log("formattingMoney()");
     formatingMoney();
   });
 </script>
