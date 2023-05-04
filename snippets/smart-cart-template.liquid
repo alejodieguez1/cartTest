@@ -638,14 +638,14 @@
     moneys.forEach((money) => {
       const moneyVal = money.dataset.value || money.textContent;
       var numb = + moneyVal.match(/\d/g).join("");
-      const newMoneyVal = (numb / 100).toFixed(0);
 
       if (Array.from(money.querySelectorAll("span")).length > 1) {
-        console.log(moneyVal);
+        const newMoneyVal = (numb).toFixed(0);
         const srStr = money.querySelector(".sr-only").textContent
         money.innerHTML = `<span class="sr-only">${srStr}</span><span>$${newMoneyVal}</span>`;
         money.dataset.value = moneyVal;
       } else {
+        const newMoneyVal = (numb / 100).toFixed(0);
         money.innerHTML = `<span>$${newMoneyVal}</span>`;
         money.dataset.value = moneyVal;
       }
