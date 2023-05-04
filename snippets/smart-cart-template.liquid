@@ -632,10 +632,11 @@
       const newMoneyVal = (numb / 100).toFixed(0);
       console.log(money.innerHTML);
 
-      if (money.textContent.includes(".")) {
-        money.innerHTML = money.innerHTML.replace('.00', '');
+      if (money.querySelector("span")) {
+        const srStr = money.querySelector(".sr-only").textContent
+        money.innerHTML = `<span class="sr-only">${srStr}</span><span>$${newMoneyVal}</span>`;
       } else {
-        money.innerHTML = money.innerHTML.replace(',00', '');
+        money.innerHTML = `$${moneyVal}`;
       }
     });
     buttons.forEach((button) => {
