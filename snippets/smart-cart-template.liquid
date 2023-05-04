@@ -646,7 +646,8 @@
         money.innerHTML = `<span class="sr-only">${srStr}</span><span>$${newMoneyVal}</span>`;
       } else {
         console.log(moneyVal);
-        money.innerHTML = `<span data-value="${moneyVal}">$${newMoneyVal}</span>`;
+        money.innerHTML = `<span>$${newMoneyVal}</span>`;
+        money.dataset.value = moneyVal;
       }
     });
     buttons.forEach((button) => {
