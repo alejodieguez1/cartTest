@@ -632,9 +632,9 @@
   };
 
   function formatingMoney() {
+    const moneys = document.querySelectorAll(".rebuy-money");
+    const buttons = document.querySelectorAll(".donations__button");
     setTimeout(() => {
-      const moneys = document.querySelectorAll(".rebuy-money");
-      const buttons = document.querySelectorAll(".donations__button");
 
       moneys.forEach((money) => {
         const moneyVal = money.dataset.value || money.textContent;
@@ -661,6 +661,9 @@
         }
       });
     }, 200)
+    moneys.forEach((money) => {
+      money.classList.add("rebuy-money-hidden");
+    })
   };
 
 
