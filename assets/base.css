@@ -20206,6 +20206,9 @@ button.flickity-button.next {
   letter-spacing: -0.03em;
   color: #3c3c3b !important;
 }
+.rebuy-money-hidden {
+  display: none;
+}
 .rebuy-cart__flyout-item-media {
   margin-right: 10px !important;
 }
