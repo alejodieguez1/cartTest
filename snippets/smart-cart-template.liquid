@@ -630,7 +630,8 @@
       const moneyVal = money.textContent;
       var numb = + moneyVal.match(/\d/g).join("");
       const newMoneyVal = (numb / 100).toFixed(0);
-      console.log(newMoneyVal);
+      console.log(money.innerHTML);
+
       if (money.textContent.includes(".")) {
         money.innerHTML = money.innerHTML.replace('.00', '');
       } else {
