@@ -632,32 +632,34 @@
   };
 
   function formatingMoney() {
-    const moneys = document.querySelectorAll(".rebuy-money");
-    const buttons = document.querySelectorAll(".donations__button");
+    setTimeout(() => {
+      const moneys = document.querySelectorAll(".rebuy-money");
+      const buttons = document.querySelectorAll(".donations__button");
 
-    moneys.forEach((money) => {
-      debugger
-      const moneyVal = money.dataset.value || money.textContent;
-      var numb = + moneyVal.match(/\d/g).join("");
+      moneys.forEach((money) => {
+        const moneyVal = money.dataset.value || money.textContent;
+        var numb = + moneyVal.match(/\d/g).join("");
 
-      if (Array.from(money.querySelectorAll("span")).length > 1) {
-        const newMoneyVal = (numb).toFixed(0);
-        const srStr = money.querySelector(".sr-only").textContent
-        money.innerHTML = `<span class="sr-only">${srStr}</span><span>$${newMoneyVal}</span>`;
-        money.dataset.value = moneyVal;
-      } else {
-        const newMoneyVal = (numb / 100).toFixed(0);
-        money.innerHTML = `<span>$${newMoneyVal}</span>`;
-        money.dataset.value = moneyVal;
-      }
-    });
-    buttons.forEach((button) => {
-      if (button.textContent.includes(".")) {
-        button.innerHTML = button.innerHTML.replace('.00', '');
-      } else {
-        button.innerHTML = button.innerHTML.replace(',00', '');
-      }
-    });
+        if (Array.from(money.querySelectorAll("span")).length > 1) {
+          const newMoneyVal = (numb).toFixed(0);
+          const srStr = money.querySelector(".sr-only").textContent
+          money.innerHTML = `<span class="sr-only">${srStr}</span><span>$${newMoneyVal}</span>`;
+          money.dataset.value = moneyVal;
+        } else {
+          debugger
+          const newMoneyVal = (numb / 100).toFixed(0);
+          money.innerHTML = `<span>$${newMoneyVal}</span>`;
+          money.dataset.value = moneyVal;
+        }
+      });
+      buttons.forEach((button) => {
+        if (button.textContent.includes(".")) {
+          button.innerHTML = button.innerHTML.replace('.00', '');
+        } else {
+          button.innerHTML = button.innerHTML.replace(',00', '');
+        }
+      });
+    }, 100)
   };
 
 
