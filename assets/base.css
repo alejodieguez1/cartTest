@@ -20208,9 +20208,9 @@ button.flickity-button.next {
   opacity: 1;
   transition: opacity 0.3s ease;
 }
-.rebuy-money-hidden {
+/* .rebuy-money-hidden {
   opacity: 0;
-}
+} */
 .rebuy-cart__flyout-item-media {
   margin-right: 10px !important;
 }
