@@ -631,7 +631,7 @@
     };
   };
 
-  function formatingMoney() {
+  const formatingMoney = debounce(() => {
     const moneys = document.querySelectorAll(".rebuy-money");
     const buttons = document.querySelectorAll(".donations__button");
     setTimeout(() => {
@@ -664,7 +664,7 @@
     moneys.forEach((money) => {
       money.classList.add("rebuy-money-hidden");
     })
-  };
+  });
 
 
   document.addEventListener('rebuy:cart.ready', formatingMoney);
