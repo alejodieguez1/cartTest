@@ -621,30 +621,32 @@
   };
 
   function formatingMoney() {
-    const moneys = document.querySelectorAll(".rebuy-money");
-    const buttons = document.querySelectorAll(".donations__button");
+    setTimeout(() => {
+      const moneys = document.querySelectorAll(".rebuy-money");
+      const buttons = document.querySelectorAll(".donations__button");
 
+      moneys.forEach((money) => {
 
-    moneys.forEach((money) => {
+        const moneyVal = money.textContent;
+        var numb = + moneyVal.match(/\d/g).join("");
+        const newMoneyVal = (numb / 100).toFixed(0);
 
-      const moneyVal = money.textContent;
-      var numb = + moneyVal.match(/\d/g).join("");
-      const newMoneyVal = (numb / 100).toFixed(0);
+        if (money.querySelector("span")) {
+          const srStr = money.querySelector(".sr-only").textContent
+          money.innerHTML = `<span class="sr-only">${srStr}</span><span>$${newMoneyVal}</span>`;
+        } else {
+          money.innerHTML = `$${newMoneyVal}`;
+        }
+      });
+      buttons.forEach((button) => {
+        if (button.textContent.includes(".")) {
+          button.innerHTML = button.innerHTML.replace('.00', '');
+        } else {
+          button.innerHTML = button.innerHTML.replace(',00', '');
+        }
+      });
+    }, 300)
 
-      if (money.querySelector("span")) {
-        const srStr = money.querySelector(".sr-only").textContent
-        money.innerHTML = `<span class="sr-only">${srStr}</span><span>$${newMoneyVal}</span>`;
-      } else {
-        money.innerHTML = `$${newMoneyVal}`;
-      }
-    });
-    buttons.forEach((button) => {
-      if (button.textContent.includes(".")) {
-        button.innerHTML = button.innerHTML.replace('.00', '');
-      } else {
-        button.innerHTML = button.innerHTML.replace(',00', '');
-      }
-    });
   };
 
   document.addEventListener('rebuy:cart.ready', (event) => {
