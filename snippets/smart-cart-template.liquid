@@ -284,11 +284,23 @@
                     <div class="rebuy-cart__flyout-remove-container">
                       <div class="rebuy-cart__flyout-item-price">
                         <div v-if="itemHasDiscount(item)">
-                          <span class="rebuy-money rebuy-money-hidden sale" v-html="itemPrice(item)"></span>
-                          <span class="rebuy-money rebuy-money-hidden compare-at" v-html="compareAtPrice(item)"></span>
+                          <span class="rebuy-money rebuy-money-hidden sale">
+                          <script>
+                            {{ itemPrice(item) }}
+                          </script>  
+                          </span>
+                          <span class="rebuy-money rebuy-money-hidden compare-at">
+                            <script>
+                              {{ compareAtPrice(item) }}
+                            </script>
+                          </span>
                         </div>
                         <div v-if="!itemHasDiscount(item)">
-                          <span class="rebuy-money rebuy-money-hidden" v-html="itemPrice(item)"></span>
+                          <span class="rebuy-money rebuy-money-hidden">
+                            <script>
+                              {{ itemPrice(item) }}
+                            </script>  
+                          </span>
                         </div>
                       </div>
                       <button
@@ -637,7 +649,7 @@
     setTimeout(() => {
 
       moneys.forEach((money) => {
-        const moneyVal = money.dataset.value || money.textContent;
+        const moneyVal = money.dataset.value || money.querySelector("script").innerHTML;
         var numb = + moneyVal.match(/\d/g).join("");
 
         if (Array.from(money.querySelectorAll("span")).length > 1) {
