@@ -64,10 +64,10 @@ class TieredFeedbackFormatter extends MoneyFormatter {
       numb,
       "{{ amount_no_decimals }}"
     );
-    this.innerHTML = `$${formattedMoney} ${moneyVal
-      .split(" ")
-      .slice(2)
-      .join(" ")}`;
+    this.innerHTML =
+      numb === 0
+        ? moneyVal
+        : `$${formattedMoney} ${moneyVal.split(" ").slice(2).join(" ")}`;
   }
 }
 customElements.define("tiered-feedback-formatter", TieredFeedbackFormatter);
