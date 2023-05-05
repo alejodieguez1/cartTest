@@ -40,6 +40,7 @@ class MoneyFormatter extends HTMLElement {
   }
 
   formatMoney() {
+    debugger;
     const formattedMoney = window.Rebuy.Cart.formatMoney(
       this.dataset.value,
       "{{ amount_no_decimals }}"
