@@ -44,7 +44,7 @@ class MoneyFormatter extends HTMLElement {
       this.dataset.value,
       "{{ amount_no_decimals }}"
     );
-    this.innerHTML = formattedMoney;
+    this.innerHTML = `$${formattedMoney}`;
     console.log(formattedMoney);
   }
 }
