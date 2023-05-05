@@ -16,10 +16,9 @@ class MoneyFormatter extends HTMLElement {
   }
 
   observeChanges() {
-    const options = { childList: true, subtree: true };
+    const options = { childList: true, subtree: true, attributes: true };
     this.mutationObserver = new MutationObserver((event) => {
-      // this.formatMoney();
-      console.log(event);
+      debugger;
     });
     this.mutationObserver.observe(this, options);
   }
@@ -40,7 +39,6 @@ class MoneyFormatter extends HTMLElement {
   }
 
   formatMoney() {
-    debugger;
     const formattedMoney = window.Rebuy.Cart.formatMoney(
       this.dataset.value,
       "{{ amount_no_decimals }}"
