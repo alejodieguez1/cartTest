@@ -59,15 +59,18 @@ customElements.define("money-formatter", MoneyFormatter);
 class TieredFeedbackFormatter extends MoneyFormatter {
   format() {
     const moneyVal = this.dataset.value;
-    var numb = +moneyVal.match(/\d/g).join("");
-    const formattedMoney = window.Rebuy.Cart.formatMoney(
-      numb,
-      "{{ amount_no_decimals }}"
-    );
-    this.innerHTML =
-      numb === 0
-        ? moneyVal
-        : `$${formattedMoney} ${moneyVal.split(" ").slice(2).join(" ")}`;
+    // console.log(moneyVal);
+    var match = /\$(\d{1,3}(\,\d{3})*|(\d+))(\.\d{2})?/g.exec(moneyVal);
+    console.log(moneyVal);
+    console.log(match);
+    // const formattedMoney = window.Rebuy.Cart.formatMoney(
+    //   numb,
+    //   "{{ amount_no_decimals }}"
+    // );
+    // this.innerHTML =
+    //   numb === 0
+    //     ? moneyVal
+    //     : `$${formattedMoney} ${moneyVal.split(" ").slice(2).join(" ")}`;
   }
 }
 customElements.define("tiered-feedback-formatter", TieredFeedbackFormatter);
