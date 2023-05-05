@@ -87,11 +87,11 @@
               </div>
 
               <div class="rebuy-cart__progress-bar-wrapper">
-                <span
+                <tiered-feedback-formatter
                   id="rebuy-cart__progress-bar-meter-label"
                   class="rebuy-cart__progress-bar-prompt"
                   v-if="hasProgressPrompt(bar)"
-                  v-html="getTierFeedbackText(bar)"></span>
+                  v-bind:data-value="getTierFeedbackText(bar)"></tiered-feedback-formatter>
               </div>
               <div class="rebuy-cart__progress-bar-meter" v-bind:class="[hasTierProgress() ? 'has-progress' : 'no-progress']">
                 <div
