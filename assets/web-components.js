@@ -60,7 +60,7 @@ class TieredFeedbackFormatter extends MoneyFormatter {
   format() {
     const moneyVal = this.dataset.value;
     // console.log(moneyVal);
-    var match = /\$(\d{1,3}(\,\d{3})*|(\d+))(\.\d{2})?/g.exec(moneyVal);
+    var match = /\$[ ]{1}(\d{1,3}(\,\d{3})*|(\d+))(\.\d{2})?/g.exec(moneyVal);
     console.log(moneyVal);
     console.log(match);
     // const formattedMoney = window.Rebuy.Cart.formatMoney(
