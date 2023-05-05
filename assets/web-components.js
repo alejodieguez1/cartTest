@@ -17,8 +17,11 @@ class MoneyFormatter extends HTMLElement {
 
   observeChanges() {
     const options = { childList: true, subtree: true, attributes: true };
-    this.mutationObserver = new MutationObserver((event, etc) => {
-      debugger;
+    this.mutationObserver = new MutationObserver((mutations, etc) => {
+      mutations.forEach(function (mutation) {
+        debugger;
+        console.log(mutation.type);
+      });
     });
     this.mutationObserver.observe(this, options);
   }
