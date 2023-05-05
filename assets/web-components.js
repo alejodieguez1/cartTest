@@ -1,8 +1,6 @@
 class MoneyFormatter extends HTMLElement {
   constructor() {
     super();
-    this.timer = null;
-    this.timeout = 300;
     this.mutationObserver = null;
   }
 
@@ -34,15 +32,6 @@ class MoneyFormatter extends HTMLElement {
     if (this.mutationObserver) {
       this.mutationObserver.disconnect();
     }
-  }
-
-  debounce(func, timeout) {
-    return (...args) => {
-      clearTimeout(this.timer);
-      this.timer = setTimeout(() => {
-        func.apply(this, args);
-      }, timeout);
-    };
   }
 
   format() {
