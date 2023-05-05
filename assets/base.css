@@ -19952,7 +19952,10 @@ p.ql-align-center {
   transition: 0.3s;
   text-decoration: none;
 }
-
+.rebuy-cart__flyout-empty-cart a:hover {
+  background: #3c3c3b!important;
+  color: #fff!important;
+}
 .ql-align-center {
   display: flex !important;
   justify-content: center;
@@ -20064,6 +20067,10 @@ button.flickity-button.next {
   letter-spacing: -0.03em;
   transition: 0.3s;
   text-decoration: none;
+}
+.rebuy-button:hover {
+  background: #3c3c3b!important;
+  color: #fff!important;
 }
 .btn-inactive {
   background: #fff !important;
