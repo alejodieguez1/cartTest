@@ -66,7 +66,7 @@ class TieredFeedbackFormatter extends MoneyFormatter {
     );
     this.innerHTML = `$${formattedMoney} ${moneyVal
       .split(" ")
-      .slice(1)
+      .slice(2)
       .join(" ")}`;
   }
 }
