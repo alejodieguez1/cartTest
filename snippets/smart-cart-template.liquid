@@ -367,7 +367,9 @@
             </div>
 
             <div class="rebuy-cart__flyout-recommendations" v-if="hasCrossSells()">
-              <div v-for="widget_id in settings.cross_sells" v-bind:data-rebuy-id="widget_id"></div>
+              <suggestions-widget>
+                <div v-for="widget_id in settings.cross_sells" v-bind:data-rebuy-id="widget_id"></div>
+              </suggestions-widget>
             </div>
 
             <div class="rebuy-cart__upsells" v-if="hasPrePurchase()">
@@ -495,7 +497,7 @@
             <div class="rebuy-cart__flyout-subtotal-label">
               <span v-html="subtotalLabel()"></span>
             </div>
-            <span class="rebuy-cart__flyout-subtotal-amount" v-html="subtotal()"></span>
+            <money-formatter v-bind:data-value="subtotal()" class="rebuy-cart__flyout-subtotal-amount"></money-formatter>
           </div>
           <div data-app-target="below_subtotal"></div>
 
@@ -619,4 +621,22 @@
     });
     window.Rebuy.Cart.addItem(selectedVariant);
   };
+
+  function formatingMoney() {
+    const buttons = document.querySelectorAll(".donations__button");
+    buttons.forEach((button) => {
+      if (button.textContent.includes(".")) {
+        button.innerHTML = button.innerHTML.replace('.00', '');
+      } else {
+        button.innerHTML = button.innerHTML.replace(',00', '');
+      }
+    });
+  };
+  document.addEventListener('rebuy:cart.ready', (event) => {
+    formatingMoney();
+  });
+
+  document.addEventListener('rebuy:cart.change', (event) => {
+    formatingMoney();
+  });
 </script>
