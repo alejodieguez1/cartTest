@@ -19793,7 +19793,7 @@ em {
   color: #3c3c3b;
 }
 .rebuy-cart__progress-bar-container {
-  padding: 20px 18px 0 !important;
+  padding: 20px 10px 0 !important;
   border: none !important;
 }
 .rebuy-cart__progress-bar-meter {
@@ -19953,8 +19953,8 @@ p.ql-align-center {
   text-decoration: none;
 }
 .rebuy-cart__flyout-empty-cart a:hover {
-  background: #3c3c3b!important;
-  color: #fff!important;
+  background: #3c3c3b !important;
+  color: #fff !important;
 }
 .ql-align-center {
   display: flex !important;
@@ -20016,6 +20016,7 @@ p.ql-align-center {
   letter-spacing: -0.03em;
   color: #3c3c3b !important;
   margin: 0 !important;
+  text-align: left !important;
 }
 .rebuy-product-price {
   margin: 0 !important;
@@ -20069,8 +20070,8 @@ button.flickity-button.next {
   text-decoration: none;
 }
 .rebuy-button:hover {
-  background: #3c3c3b!important;
-  color: #fff!important;
+  background: #3c3c3b !important;
+  color: #fff !important;
 }
 .btn-inactive {
   background: #fff !important;
@@ -20101,7 +20102,7 @@ button.flickity-button.next {
 .donations__text {
   font-family: "ChaletBook-Bold";
   font-weight: 400;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 14px;
   text-align: center;
   letter-spacing: -0.03em;
@@ -20165,7 +20166,7 @@ button.flickity-button.next {
   width: 65% !important;
 }
 .rebuy-cart__flyout-item {
-  margin: 15px 18px 20px !important;
+  margin: 15px 10px 20px !important;
   background: #fff;
   border-radius: 5px;
   padding-right: 0 !important;
@@ -20245,18 +20246,20 @@ button.flickity-button.next {
 }
 .rebuy-cart__flyout-item-quantity {
   width: 65px !important;
-  border: 1px solid #000;
-  border-radius: 5px;
+  border: 1px solid #3c3c3b;
+  border-radius: 7px;
 }
 .rebuy-cart__flyout-item-quantity-widget {
   width: 100% !important;
   border-width: 0px !important;
 }
 .rebuy-cart__flyout-item-quantity-widget-button {
+  color: #3c3c3b !important;
   background: transparent !important;
-  width: 30px !important;
+  width: 33px !important;
 }
 .rebuy-cart__flyout-item-quantity-widget-label {
+  color: #3c3c3b !important;
   border: none !important;
   width: 30px !important;
 }
@@ -20393,6 +20396,9 @@ button.flickity-button.next {
   }
   button.flickity-button.previous {
     left: 80% !important;
+  }
+  .donations__text {
+    font-size: 14px;
   }
 }
 

@@ -60,6 +60,7 @@
               <div
                 class="rebuy-cart__flyout-shipping-bar-meter-fill"
                 v-bind:style="{ width: freeShippingPercentComplete() }"
+
                 role="progressbar"
                 tabindex="0"
                 aria-valuemin="0"
@@ -473,7 +474,7 @@
 
         {% endraw %}
         <div class="donations__container">
-          <p class="donations__text">Donate to Black Girls Code and Topicals will match 100%</p>
+          <p class="donations__text">Donate to Sad Girls Club to give free minutes of therapy</p>
           <div class="donations__buttons">
             {% for product in collections['donations'].products %}
               {% for variant in product.variants %}
